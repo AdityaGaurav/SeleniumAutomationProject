@@ -1,0 +1,10 @@
+#Browser Detail
+browserName =FIREFOX
+#browserName =CHROME
+
+#URL
+URL = https://enterprise-demo.orangehrmlive.com/auth/login
+
+#local or remote
+hostName = localHost
+#hostName = remoteHost

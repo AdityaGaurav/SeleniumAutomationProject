@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Automation suite]">
+  <parameter name="URL" value="https://enterprise-demo.orangehrmlive.com/auth/login"/>
+  <test name="Test(failed)">
+    <classes>
+      <class name="tests.BasePageTest">
+        <methods>
+          <include name="setBrowser"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- tests.BasePageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Automation suite] -->

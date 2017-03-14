@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Automation suite">
+    <parameter name="URL" value="https://enterprise-demo.orangehrmlive.com/auth/login"/>
+
+    <test name="Test">
+        <!--<parameter name="browserName" value="FireFox"/>-->
+        <!--<parameter name="URL" value="https://enterprise-demo.orangehrmlive.com/auth/login"/>-->
+        <classes>
+            <class name="tests.BasePageTest"/>
+
+            <!--&lt;!&ndash;<class name="com.imaginea.tests.HomePageTests"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;<class name="com.imaginea.tests."/>&ndash;&gt;-->
+        </classes>
+    </test> <!-- Test -->
+</suite>
