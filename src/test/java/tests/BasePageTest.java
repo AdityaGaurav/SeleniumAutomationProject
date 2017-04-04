@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  */
 public class BasePageTest extends BasePage {
 
-    @Test
+
     public void openBrowser(){
 
     }

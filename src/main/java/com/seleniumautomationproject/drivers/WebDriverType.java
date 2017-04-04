@@ -2,6 +2,7 @@ package com.seleniumautomationproject.drivers;
 
 import com.seleniumautomationproject.utilities.ProjectUtilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,12 +21,15 @@ final class WebDriverType extends LocalDriverFactory {
     private final String userDirectoryPath = new File(System.getProperty("user.dir")).getAbsolutePath();
     private String seperator = File.separator;
     private final String macWebDriverPath = userDirectoryPath + seperator + "src" + seperator + "main" + seperator + "resources" + seperator + "macWebDrivers" + seperator;
-
+    private final String windowsWebDriverPath = userDirectoryPath + seperator + "src" + seperator + "main" + seperator + "resources" + seperator + "WindowsWebDrivers" + seperator;
+    private final String osName = System.getProperty("os.name");
+    private String firefoxBinaryPath;
+    private String chormeBinaryPath;
 
     @Override
     public WebDriver setWebDriver() {
         String browserName = ProjectUtilities.getBrowserName();
-        System.out.println("BrowserName:: " +browserName);
+        System.out.println("BrowserName:: " + browserName);
         switch (browserName) {
             case "FIREFOX":
                 return setFirefoxWebDriver();
@@ -38,7 +42,15 @@ final class WebDriverType extends LocalDriverFactory {
     }
 
     private WebDriver setFirefoxWebDriver() {
-        final String firefoxBinaryPath = macWebDriverPath + seperator + "geckodriver";
+        if (osName.toLowerCase().contains("mac")) {
+            firefoxBinaryPath = macWebDriverPath + seperator + "geckodriver";
+        } else if (osName.toLowerCase().contains("window")) {
+            System.out.println("=========browser=========");
+            firefoxBinaryPath = windowsWebDriverPath + seperator + "geckodriver.exe";
+            System.out.println("=========browser=========");
+        } else {
+            System.out.println(osName + " is not list down here.");
+        }
         System.setProperty("webdriver.gecko.driver", firefoxBinaryPath);
 //        FirefoxBinary binary = new FirefoxBinary(new File(firefoxBinaryPath));
         FirefoxProfile profile = new FirefoxProfile();
@@ -50,9 +62,18 @@ final class WebDriverType extends LocalDriverFactory {
     }
 
     private WebDriver setChromeWebDriver() {
-        String chormeBinaryPath = "/Users/adityag/Projects/ImagineaProject/SeleniumAutomationProject/src/main/resources/macWebDrivers/chromedriver";
+
+        if (osName.toLowerCase().contains("mac")) {
+            chormeBinaryPath = macWebDriverPath + seperator + "chromedriver";
+        } else if (osName.toLowerCase().contains("window")) {
+            chormeBinaryPath = windowsWebDriverPath + seperator + "chromedriver.exe";
+        } else {
+            System.out.println(osName + " is not list down here.");
+        }
+        System.setProperty("webdriver.chrome.driver", chormeBinaryPath);
         ChromeOptions options = new ChromeOptions();
         options.setBinary(chormeBinaryPath);
-        return driver;
+        driver = new ChromeDriver(options);
+        return this.driver;
     }
 }
