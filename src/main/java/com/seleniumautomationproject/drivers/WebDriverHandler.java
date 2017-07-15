@@ -1,6 +1,6 @@
 package com.seleniumautomationproject.drivers;
 
-import com.seleniumautomationproject.utilities.ProjectUtilities;
+import com.seleniumautomationproject.utilities.PropertiesFileOperator;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -12,19 +12,15 @@ public class WebDriverHandler {
 //    private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
 
     public static WebDriver getWebDriverHost() {
-        String host = ProjectUtilities.getHostName();
+        String host = PropertiesFileOperator.getHostName();
         if (host.contains("localHost")) {
-            webDriverFactory = new WebDriverType();
+            webDriverFactory = new LocalWebDriver();
             driver = webDriverFactory.getWebDriver();
         } else {
 
         }
         System.out.println("Driver setup is done.....");
         return driver;
-    }
-
-    public static void tearDownWebDriver() {
-        webDriverFactory.tearDown();
     }
 }
 

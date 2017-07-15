@@ -1,11 +1,13 @@
 #http://jodd.org/doc/props.html
 #Browser Detail
-browserName =FIREFOX
-#browserName =CHROME
+#browserName =FIREFOX
+browserName =CHROME
 
 #URL
-URL = https://enterprise-demo.orangehrmlive.com/auth/login
-
+#URL = https://www.naukri.com/
+#URL = http://demoqa.com/draggable/
+#URL = http://www.amazon.in/gp/site-directory/ref=nav_shopall_btn
+URL= https://www.gmail.com
 #local or remote
 hostName = localHost
 #hostName = remoteHost

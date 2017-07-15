@@ -8,6 +8,4 @@ import org.openqa.selenium.WebDriver;
 public interface WebDriverFactory {
 
     WebDriver getWebDriver();
-    void tearDown();
-
 }

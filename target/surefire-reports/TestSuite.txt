@@ -1,7 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 4, Time elapsed: 0.961 sec <<< FAILURE! - in TestSuite
-setBrowser(tests.BasePageTest)  Time elapsed: 0.363 sec  <<< FAILURE!
-java.lang.UnsupportedClassVersionError: org/openqa/selenium/WebDriver : Unsupported major.minor version 52.0
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.902 sec <<< FAILURE! - in TestSuite
+checkTitleOfPage(tests.GmailLoginPageTest)  Time elapsed: 0.008 sec  <<< FAILURE!
+java.lang.AssertionError: Title of page is not matching. Expected titleGmail expected [Gmail] but found []
+	at tests.GmailLoginPageTest.checkTitleOfPage(GmailLoginPageTest.java:17)
 

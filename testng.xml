@@ -8,7 +8,7 @@
         <!--<parameter name="browserName" value="FireFox"/>-->
         <!--<parameter name="URL" value="https://enterprise-demo.orangehrmlive.com/auth/login"/>-->
         <classes>
-            <class name="tests.BasePageTest"/>
+            <class name="tests.GmailLoginPageTest"/>
 
             <!--&lt;!&ndash;<class name="com.imaginea.tests.HomePageTests"/>&ndash;&gt;-->
             <!--&lt;!&ndash;<class name="com.imaginea.tests."/>&ndash;&gt;-->

@@ -1,15 +1,10 @@
 package com.seleniumautomationproject.basepage;
 
 import com.seleniumautomationproject.drivers.WebDriverHandler;
-import com.seleniumautomationproject.utilities.ProjectUtilities;
+import com.seleniumautomationproject.utilities.PropertiesFileOperator;
 import com.seleniumautomationproject.utilities.UIUtilities;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeClass;
-
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.*;
 
 /**
  * Created by adityag on 3/6/17.
@@ -25,32 +20,38 @@ public class BasePage extends UIUtilities {
         System.out.println(" Browser" + this.driver);
     }
 
-    @BeforeClass
+    @BeforeTest
     protected void setConfiguration() {
         try {
 //            this.driver = WebDriverHandler.getWebDriverHost();
-            String URL = ProjectUtilities.getURLName();
+           final String URL = PropertiesFileOperator.getURLName();
             System.out.println("URL: " + URL);
-            setWebDriver(driver);
-            this.driver.get(URL);
-            this.driver.manage().window().maximize();
-            this.driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+            if(driver != null) {
+                setWebDriver(driver);
+                openURL(URL);
+//                this.driver.get(URL);
+            }else {
+                System.out.println("WeDriver is not created.");
+            }
+//            this.driver.manage().window().maximize();
+//            this.driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+//
+//    @AfterClass
+//    protected void tearDown(){
+//        if(driver !=null)
+//        driver.quit();
+//        System.out.println("=====Close the driver=====");
+//    }
 
-    @AfterClass
-    protected void tearDown(){
-        System.out.println("=====Close the driver=====");
-        driver.quit();
-    }
-
-    @BeforeMethod
-    protected void beforeMethod(){
-        System.out.println("=======BeforeMethod=====");
-    }
+//    @BeforeMethod
+//    protected void beforeMethod(){
+//        System.out.println("=======BeforeMethod=====");
+//    }
 
 
 

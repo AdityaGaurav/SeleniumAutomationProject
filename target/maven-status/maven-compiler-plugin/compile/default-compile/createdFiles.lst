@@ -1,0 +1,11 @@
+com\seleniumautomationproject\utilities\XMLFileOperator.class
+com\seleniumautomationproject\drivers\LocalWebDriver.class
+com\seleniumautomationproject\utilities\JSONFileOperator.class
+com\seleniumautomationproject\basepage\BasePage.class
+com\seleniumautomationproject\utilities\CSVFileOperator.class
+com\seleniumautomationproject\drivers\RemoteWebDriver.class
+com\seleniumautomationproject\utilities\UIUtilities.class
+com\seleniumautomationproject\drivers\WebDriverFactory.class
+com\seleniumautomationproject\utilities\EXCELFileOperator.class
+com\seleniumautomationproject\drivers\WebDriverHandler.class
+com\seleniumautomationproject\utilities\PropertiesFileOperator.class

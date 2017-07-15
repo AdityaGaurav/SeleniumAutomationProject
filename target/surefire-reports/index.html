@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Automation_suite">
-              <span class="suite-name border-skipped">Automation suite</span>
+              <span class="suite-name border-failed">Automation suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Automation_suite">
-                    <span>testng.xml</span>
+                    <span>E:\GitProject\SeleniumProject\SeleniumAutomationProject\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Automation_suite" class="hide-methods skipped suite-Automation_suite"> (hide)</a> <!-- hide-methods skipped suite-Automation_suite -->
-                      <a href="#" panel-name="suite-Automation_suite" class="show-methods skipped suite-Automation_suite"> (show)</a> <!-- show-methods skipped suite-Automation_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Automation_suite" class="hide-methods failed suite-Automation_suite"> (hide)</a> <!-- hide-methods failed suite-Automation_suite -->
+                      <a href="#" panel-name="suite-Automation_suite" class="show-methods failed suite-Automation_suite"> (show)</a> <!-- show-methods failed suite-Automation_suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Automation_suite">
+                    <div class="method-list-content failed suite-Automation_suite">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Automation_suite" title="tests.BasePageTest" hash-for-method="openBrowser">openBrowser</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Automation_suite" title="tests.GmailLoginPageTest" hash-for-method="checkTitleOfPage">checkTitleOfPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Automation_suite -->
+                    </div> <!-- method-list-content failed suite-Automation_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,25 +116,29 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Automation_suite" class="panel Automation_suite">
-          <div class="suite-Automation_suite-class-skipped">
+          <div class="suite-Automation_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">tests.BasePageTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">tests.GmailLoginPageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="openBrowser">
-                  </a> <!-- openBrowser -->
-                  <span class="method-name">openBrowser</span>
+                  <a name="checkTitleOfPage">
+                  </a> <!-- checkTitleOfPage -->
+                  <span class="method-name">checkTitleOfPage</span>
+                  <div class="stack-trace">java.lang.AssertionError: Title of page is not matching. Expected titleGmail expected [Gmail] but found []
+	at tests.GmailLoginPageTest.checkTitleOfPage(GmailLoginPageTest.java:17)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Automation_suite-class-skipped -->
+          </div> <!-- suite-Automation_suite-class-failed -->
         </div> <!-- panel Automation_suite -->
         <div panel-name="test-xml-Automation_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/adityag/Projects/ImagineaProject/SeleniumAutomationProject/testng.xml</span>
+            <span class="header-content">E:\GitProject\SeleniumProject\SeleniumAutomationProject\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +148,7 @@
   &lt;parameter name=&quot;URL&quot; value=&quot;https://enterprise-demo.orangehrmlive.com/auth/login&quot;/&gt;
   &lt;test name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.BasePageTest&quot;/&gt;
+      &lt;class name=&quot;tests.GmailLoginPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Automation suite --&gt;
@@ -186,14 +190,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'openBrowser')
-data.setCell(0, 2, 'tests.BasePageTest')
-data.setCell(0, 3, 2);
+data.setCell(0, 1, 'checkTitleOfPage')
+data.setCell(0, 2, 'tests.GmailLoginPageTest')
+data.setCell(0, 3, 28);
 window.suiteTableData['Automation_suite']= { tableData: data, tableDiv: 'times-div-Automation_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 ms</span>
+              <span class="suite-total-time">Total running time: 28 ms</span>
               <div id="times-div-Automation_suite">
               </div> <!-- times-div-Automation_suite -->
             </div> <!-- times-div -->
@@ -219,17 +223,25 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.BasePageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.GmailLoginPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">setBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+              <div class="configuration-class before">
+                <span class="method-name">setConfiguration</span>
+                <span class="method-start">3764 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">openBrowser</span>
-                <span class="method-start">42 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkTitleOfPage</span>
+                <span class="method-start">3816 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">3856 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

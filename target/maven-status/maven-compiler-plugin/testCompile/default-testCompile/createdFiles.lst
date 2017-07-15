@@ -1,0 +1,9 @@
+pages\LoginPage.class
+pages\HomePage.class
+locators\HomePageLocators.class
+locators\LogoutPageLocators.class
+tests\BasePageTest.class
+tests\LoginPageTest.class
+locators\LoginPageLocators.class
+tests\GmailLoginPageTest.class
+pages\GmailLoginPage.class
